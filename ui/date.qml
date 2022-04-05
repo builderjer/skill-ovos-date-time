@@ -7,95 +7,79 @@ import QtGraphicalEffects 1.0
 
 Mycroft.CardDelegate {
     id: dateRoot
-    topInset: Mycroft.Units.gridUnit / 2
-    bottomInset: Mycroft.Units.gridUnit / 2
+    cardRadius: 10
+    cardBackgroundOverlayColor: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.5)
+    property bool horizontalMode: width > height ? 1 : 0
 
-    ColumnLayout {
-        id: grid
-        anchors.fill: parent
-        spacing: 0
+    Label {
+        id: weekday
+        anchors.top: parent.top
+        anchors.bottom: dateContentsArea.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.leftMargin: Mycroft.Units.gridUnit / 2
+        anchors.rightMargin: Mycroft.Units.gridUnit / 2
+        fontSizeMode: Text.Fit
+        minimumPixelSize: horizontalMode ? height * 0.3 : width * 0.05
+        font.pixelSize: horizontalMode ? height * 0.9 : width * 0.7
+        renderType: Text.NativeRendering
+        font.family: "Noto Sans Display"
+        font.styleName: "Black"
+        font.capitalization: Font.AllUppercase
+        text: sessionData.weekday_string
+        elide: Text.ElideRight
+        maximumLineCount: 1
+        color: Kirigami.Theme.textColor
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+    }
 
-        /* Put the day of the week at the top of the screen */
-        Item { 
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.fillWidth: true
-            Layout.preferredHeight: parent.height / 6
-            
-            Label {
-                id: weekday
-                anchors.centerIn: parent
-                font.pixelSize: parent.height
-                wrapMode: Text.WordWrap
-                renderType: Text.NativeRendering
-                font.family: "Noto Sans Display"
-                font.styleName: "Black"
-                font.capitalization: Font.AllUppercase
-                text: sessionData.weekday_string
-                color: "white"
-            }
-        }
+    Label {
+        id: year
+        anchors.top: dateContentsArea.bottom
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.leftMargin: Mycroft.Units.gridUnit / 2
+        anchors.rightMargin: Mycroft.Units.gridUnit / 2
+        fontSizeMode: Text.Fit
+        minimumPixelSize: horizontalMode ? height * 0.3 : width * 0.05
+        font.pixelSize: horizontalMode ? height * 0.9 : width * 0.7
+        renderType: Text.NativeRendering
+        font.family: "Noto Sans Display"
+        font.styleName: "Black"
+        font.capitalization: Font.AllUppercase
+        text: sessionData.year_string
+        elide: Text.ElideRight
+        maximumLineCount: 1
+        color: Kirigami.Theme.textColor
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+    }
 
-        /* Add some spacing between the day of week and the calendar graphic */
-        Item {
-            Layout.preferredHeight: Mycroft.Units.gridUnit / 2
-        }
-        
-        /* Calendar graphic */
-        Item {
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.preferredWidth: Mycroft.Units.gridUnit * 25.5
-            Layout.preferredHeight: Mycroft.Units.gridUnit * 19.25
-            
-            /* Use Rectangles Instead of Graphics For Proper Scaling of Graphics Items*/
-            Rectangle {
-                id: outterRectangle
-                anchors.fill: parent
-                radius: 30
-                Item {
-                    id: date
-                    anchors.fill: parent
-                    anchors.topMargin: Mycroft.Units.gridUnit * 5.5
-                    
-                    /* The day of the month goes in the calendar graphic under the month */
-                    Label {
-                        anchors.centerIn: parent
-                        font.pixelSize: parent.height
-                        wrapMode: Text.WordWrap
-                        font.family: "Noto Sans Display"
-                        font.styleName: "Bold"
-                        text: sessionData.day_string
-                        color: "#2C3E50"
-                    }
-                }
-            }
-            
-            
-            Item {
-                anchors.fill: outterRectangle
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: outterRectangle
-                }            
-                Rectangle {
-                    id: innerRectangle
-                    width: Mycroft.Units.gridUnit * 25.5
-                    height: Mycroft.Units.gridUnit * 5.5
-                    clip: true
-                    color: "#22A7F0"
-                    
-                    /*  The top part of the calendar graphic containing the month */
-                    Label {
-                        id: month
-                        anchors.centerIn: parent
-                        font.pixelSize: parent.height * 0.65
-                        wrapMode: Text.WordWrap
-                        font.family: "Noto Sans Display"
-                        font.styleName: "Bold"
-                        text: sessionData.month_string
-                        color: "white"
-                    }
-                }
-            }
+    Rectangle {
+        id: dateContentsArea
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        anchors.right: parent.right
+        color: Qt.darker(Kirigami.Theme.backgroundColor, 1.5)
+        height: parent.height / 2
+
+        Label {
+            id: day
+            anchors.fill: parent
+            anchors.margins: Mycroft.Units.gridUnit
+            fontSizeMode: Text.Fit
+            minimumPixelSize: horizontalMode ? height * 0.3 : width * 0.05
+            font.pixelSize: horizontalMode ? height * 0.9 : width * 0.7
+            elide: Text.ElideRight
+            maximumLineCount: 1
+            font.family: "Noto Sans Display"
+            font.styleName: "Bold"
+            text: sessionData.daymonth_string
+            color: Kirigami.Theme.textColor
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
         }
     }
 }

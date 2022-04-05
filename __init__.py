@@ -31,7 +31,6 @@ from mycroft import MycroftSkill, intent_handler
 from mycroft.util.parse import (extract_datetime, fuzzy_match, extract_number,
                                 normalize)
 from mycroft.util.time import now_utc, to_local, now_local
-from mycroft.skills import resting_screen_handler
 
 
 def speakable_timezone(tz):
@@ -86,19 +85,6 @@ class TimeSkill(MycroftSkill):
             return self.config_core["enclosure"].get("platform")
         else:
             return None
-
-    @resting_screen_handler('Time and Date')
-    def handle_idle(self, message):
-        self.gui.clear()
-        self.log.debug('Activating Time/Date resting page')
-        self.gui['time_string'] = self.get_display_current_time()
-        self.gui['ampm_string'] = ''
-        self.gui['date_string'] = self.get_display_date()
-        self.gui['weekday_string'] = self.get_weekday()
-        self.gui['month_string'] = self.get_month_date()
-        self.gui['year_string'] = self.get_year()
-        self.gui['build_date'] = self.build_info.get('build_date', '')
-        self.gui.show_page('idle.qml')
 
     @property
     def build_info(self):
@@ -666,6 +652,8 @@ class TimeSkill(MycroftSkill):
         self.gui.clear()
         self.gui['date_string'] = self.get_display_date(day, location)
         self.gui['weekday_string'] = self.get_weekday(day, location)
+        self.gui['daymonth_string'] = self.get_month_date(day, location)
+        self.gui['location_string'] = str(location)
         month_string = self.get_month_date(day, location).split(" ")
         if self.config_core.get('date_format') == 'MDY':
             self.gui['day_string'] = month_string[1]

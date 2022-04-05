@@ -59,7 +59,7 @@ Mycroft.Delegate {
                         font.pixelSize: horizontalMode ? timeRoot.horizontalFontWidth : parent.height
                         horizontalAlignment: horizontalMode ? Text.AlignRight : Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
-                        color: "white"
+                        color: Kirigami.Theme.textColor
                         renderType: height > 40 ? Text.QtRendering : (Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering)
 
                         Component.onCompleted: {
@@ -100,7 +100,7 @@ Mycroft.Delegate {
                         font.pixelSize: horizontalMode ? timeRoot.horizontalFontWidth : parent.height
                         horizontalAlignment: horizontalMode ? Text.AlignLeft : Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
-                        color: "#22A7F0"
+                        color: Kirigami.Theme.highlightColor
                         renderType: height > 40 ? Text.QtRendering : (Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering)
 
                         Component.onCompleted: {
