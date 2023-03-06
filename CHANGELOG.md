@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/skill-ovos-date-time/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/f4a9679c41c73fba0ada479afa61091f4f2712ef...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.2a1...HEAD)
+
+**Merged pull requests:**
+
+- Stable OVOS dependencies [\#17](https://github.com/OpenVoiceOS/skill-ovos-date-time/pull/17) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [V0.2.2a1](https://github.com/OpenVoiceOS/skill-ovos-date-time/tree/V0.2.2a1) (2023-03-04)
+
+[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/f4a9679c41c73fba0ada479afa61091f4f2712ef...V0.2.2a1)
 
 **Implemented enhancements:**
 
