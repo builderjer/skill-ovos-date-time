@@ -2,7 +2,16 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/skill-ovos-date-time/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.2a1...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.2a2...HEAD)
+
+**Merged pull requests:**
+
+- Add missing release\_skillstore.py [\#20](https://github.com/OpenVoiceOS/skill-ovos-date-time/pull/20) ([NeonDaniel](https://github.com/NeonDaniel))
+- Add manifest tests [\#19](https://github.com/OpenVoiceOS/skill-ovos-date-time/pull/19) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [V0.2.2a2](https://github.com/OpenVoiceOS/skill-ovos-date-time/tree/V0.2.2a2) (2023-03-06)
+
+[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.2a1...V0.2.2a2)
 
 **Merged pull requests:**
 
