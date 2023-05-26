@@ -2,11 +2,19 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/skill-ovos-date-time/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.3a2...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.3a3...HEAD)
 
 **Implemented enhancements:**
 
 - port lang support from upstream [\#8](https://github.com/OpenVoiceOS/skill-ovos-date-time/issues/8)
+
+**Merged pull requests:**
+
+- german locale review [\#28](https://github.com/OpenVoiceOS/skill-ovos-date-time/pull/28) ([emphasize](https://github.com/emphasize))
+
+## [V0.2.3a3](https://github.com/OpenVoiceOS/skill-ovos-date-time/tree/V0.2.3a3) (2023-05-24)
+
+[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.3a2...V0.2.3a3)
 
 **Merged pull requests:**
 
