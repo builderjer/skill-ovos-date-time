@@ -2,7 +2,20 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/skill-ovos-date-time/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.3a3...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.3a4...HEAD)
+
+**Closed issues:**
+
+- "what time is it" in French returns an error [\#23](https://github.com/OpenVoiceOS/skill-ovos-date-time/issues/23)
+- When running the skill as standalone with ovos-core 0.0.8a15 fails [\#22](https://github.com/OpenVoiceOS/skill-ovos-date-time/issues/22)
+
+**Merged pull requests:**
+
+- rm wait\_while\_speaking [\#30](https://github.com/OpenVoiceOS/skill-ovos-date-time/pull/30) ([JarbasAl](https://github.com/JarbasAl))
+
+## [V0.2.3a4](https://github.com/OpenVoiceOS/skill-ovos-date-time/tree/V0.2.3a4) (2023-05-26)
+
+[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-date-time/compare/V0.2.3a3...V0.2.3a4)
 
 **Implemented enhancements:**
 
