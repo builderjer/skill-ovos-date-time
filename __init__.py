@@ -212,9 +212,11 @@ class TimeSkill(OVOSSkill):
         dt = self.get_local_datetime(location, dtUTC)
         if not dt:
             return None
+        use_ampm = self.settings.get('use_ampm', False)
 
         return nice_time(dt, self.lang, speech=False,
-                         use_24hour=self.use_24hour)
+                         use_24hour=self.use_24hour,
+                         use_ampm=use_ampm)
 
     def get_spoken_current_time(self, location=None,
                                 dtUTC=None, force_ampm=False):
